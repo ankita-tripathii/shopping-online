@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
@@ -9,29 +10,29 @@ const AboutPage = () => {
       <div className="container my-3 py-3">
         <h1 className="text-center">About Us</h1>
         <hr />
-        <p className="lead text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          facere doloremque veritatis odit similique sequi. Odit amet fuga nam
-          quam quasi facilis sed doloremque saepe sint perspiciatis explicabo
-          totam vero quas provident ipsam, veritatis nostrum velit quos
-          recusandae est mollitia esse fugit dolore laudantium. Ex vel explicabo
-          earum unde eligendi autem praesentium, doloremque distinctio nesciunt
-          porro tempore quis eaque labore voluptatibus ea necessitatibus
-          exercitationem tempora molestias. Ad consequuntur veniam sequi ullam
-          tempore vel tenetur soluta dolore sunt maxime aliquam corporis est,
-          quo saepe dolorem optio minus sint nemo totam dolorum! Reprehenderit
-          delectus expedita a alias nam recusandae illo debitis repellat libero,
-          quasi explicabo molestiae saepe, dolorem tempore itaque eveniet quam
-          dignissimos blanditiis excepturi harum numquam vel nihil? Ipsum
+        <p className=" lead text-center">
+          Welcome to Shopping Online, your ultimate destination for a seamless and delightful online shopping 
+          experience. At Shopping Online, we believe in redefining the way you shop by offering an extensive range of 
+          high-quality products curated from around the world, all at your fingertips. Our passion for providing exceptional
+          ustomer service, coupled with our commitment to offering the latest trends and timeless classics, sets us apart in
+          the competitive world of online retail. With a focus on convenience, reliability, and affordability, we strive to 
+          make every purchase an enjoyable journey. Whether you're looking for fashion-forward apparel, cutting-edge 
+          electronics, or stylish home decor, you can trust Shopping Online to deliver unparalleled variety and unparalleled 
+          quality. Join us in this exciting shopping adventure, where your satisfaction is our top priority. Happy shopping!
         </p>
+         
 
-        <h2 className="text-center py-4">Our Products</h2>
-        <div className="row">
+         <div className="row text-center py-4">
+        <h2>Our Products</h2>
+        <p className="lead">Our store offers a wide range of products to cater to your needs. Explore our categories below: </p>
+        </div>
+
+        <div className="row text-center">
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
               <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Mens's Clothing</h5>
+                <Link to="/products" className="card-title text-center btn btn-outline-dark">Mens's Clothing</Link>
               </div>
             </div>
           </div>
@@ -39,7 +40,7 @@ const AboutPage = () => {
             <div className="card h-100">
               <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Women's Clothing</h5>
+                 <Link to="/products" className="card-title text-center btn btn-outline-dark">Women's Clothing</Link>
               </div>
             </div>
           </div>
@@ -47,7 +48,7 @@ const AboutPage = () => {
             <div className="card h-100">
               <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Jewelery</h5>
+                <Link to="/products" className="card-title text-center btn btn-outline-dark">Jewelery</Link>
               </div>
             </div>
           </div>
@@ -55,7 +56,7 @@ const AboutPage = () => {
             <div className="card h-100">
               <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
-                <h5 className="card-title text-center">Electronics</h5>
+                <Link to="/products" className="card-title text-center btn btn-outline-dark">Electronics</Link>
               </div>
             </div>
           </div>
