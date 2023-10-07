@@ -46,6 +46,7 @@ useEffect(() => {
                   src={product.image}
                   alt="Card"
                   height={300}
+                  
                 />
                 <div className="card-body bg-warning-subtle">
                   <h3 className="card-title">

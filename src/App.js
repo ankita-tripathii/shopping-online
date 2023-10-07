@@ -8,7 +8,6 @@ import AboutPage from "./pages/about";
 import {
     Routes,
     Route,
-    Link
   } from "react-router-dom";
 
 
