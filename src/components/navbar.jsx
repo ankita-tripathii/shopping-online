@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
-    // const state = useSelector(state => state.handleCart)
+    const state = useSelector(state => state.handleCart)
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 sticky-top">
             <div className="container">
@@ -26,7 +26,7 @@ const Navbar = () => {
                         <NavLink className="nav-link" to="/login">Login</NavLink>
                         </li>
                          <li className="nav-item">
-                        <NavLink className="nav-link" to="/cart">Cart</NavLink>
+                        <NavLink className="nav-link" to="/cart">Cart ({state.length})</NavLink>
                         </li>
                     </ul>
                 </div>

@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/action/action";
 
 
 export default function Product() {
 
   const [productList, setProductList] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+
+  const dispatch = useDispatch();
+
+  const addProduct = (product) => {
+    dispatch(addCart(product))
+  }
 
 
 useEffect(() => {
@@ -46,7 +54,7 @@ useEffect(() => {
                   src={product.image}
                   alt="Card"
                   height={300}
-                  
+
                 />
                 <div className="card-body bg-warning-subtle">
                   <h3 className="card-title">
@@ -59,7 +67,7 @@ useEffect(() => {
                   <Link to={"/product/" + product.id} className="btn btn-primary m-1">
                     Buy Now
                   </Link>
-                  <button className="btn btn-primary m-1">
+                  <button className="btn btn-primary m-1" onClick={() => addProduct(product)}>
                     Add to Cart
                   </button>
                 </div>
