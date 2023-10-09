@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faMinus, faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
@@ -20,8 +20,9 @@ const EmptyCart = () => {
         <div className="row">
           <div className="col-md-12 py-5 bg-light text-center">
             <h4 className="p-3 display-5">Your Cart is Empty</h4>
-            <Link to="/" className="btn  btn-outline-dark mx-4">
-              <i className="fa fa-arrow-left"></i> Continue Shopping
+            <FontAwesomeIcon className="p-3 width" icon={faCartPlus} style={{color: "#f7e5b1", height:"220px"}}/>
+            <br/><span></span>
+            <Link to="/" className="btn  btn-primary mx-4">Continue Shopping
             </Link>
           </div>
         </div>
@@ -53,14 +54,14 @@ const EmptyCart = () => {
     return (
       <>
         <section className="h-100 gradient-custom">
-          <div className="container py-5">
+          <div className="container">
             <div className="row d-flex justify-content-center my-4">
               <div className="col-md-8">
                 <div className="card mb-4">
-                  <div className="card-header py-3">
+                  <div className="card-header py-3 bg-secondary-subtle">
                     <h5 className="mb-0">Item List</h5>
                   </div>
-                  <div className="card-body">
+                  <div className="card-body ">
                     {state.map((item) => {
                       return (
                         <div key={item.id}>
@@ -132,10 +133,10 @@ const EmptyCart = () => {
               </div>
               <div className="col-md-4">
                 <div className="card mb-4">
-                  <div className="card-header py-3 bg-light">
+                  <div className="card-header py-3 bg-secondary-subtle">
                     <h5 className="mb-0">Order Summary</h5>
                   </div>
-                  <div className="card-body">
+                  <div className="card-body ">
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                         Products ({totalItems})<span>${Math.round(subtotal)}</span>
@@ -156,7 +157,7 @@ const EmptyCart = () => {
 
                     <Link
                       to="/checkout"
-                      className="btn btn-dark btn-lg btn-block"
+                      className="btn btn-primary btn-lg btn-block"
                     >
                       Go to checkout
                     </Link>
@@ -173,9 +174,7 @@ const EmptyCart = () => {
    return (
     <>
       <Navbar />
-      <div className="container my-3 py-3">
-        <h1 className="text-center">Cart</h1>
-        <hr />
+      <div className="container">
          {state.length > 0 ? <ShowCart /> : <EmptyCart />}
       </div>
       <Footer />
