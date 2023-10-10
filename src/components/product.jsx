@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../redux/action/action";
 
 
@@ -11,6 +11,7 @@ export default function Product() {
 
 
   const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.handleCart);
 
   const addProduct = (product) => {
     dispatch(addCart(product))
@@ -21,15 +22,17 @@ useEffect(() => {
     fetchProductData();
   }, []);
 
-
-  function fetchProductData() {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(json => {
-        setProductList(json);
-        setFilteredProducts(json);
-      });
+  async function fetchProductData() {
+    try {
+      const response = await fetch("https://fakestoreapi.com/products");
+      const json = await response.json();
+      setProductList(json);
+      setFilteredProducts(json);
+    } catch (error) {
+      console.error("Error fetching product data: ", error);
+    }
   }
+
 
   function filterProduct(category) {
     if (category === "all") {
@@ -44,6 +47,8 @@ useEffect(() => {
   function product_detail(json) {
     return json.map((product) => {
 
+     const isProductInCart = cartItems.find(item => item.id === product.id);
+     
       return (
 
         <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
@@ -67,9 +72,15 @@ useEffect(() => {
                   <Link to={"/product/" + product.id} className="btn btn-primary m-1">
                     Buy Now
                   </Link>
-                  <button className="btn btn-primary m-1" onClick={() => addProduct(product)}>
-                    Add to Cart
-                  </button>
+                  {isProductInCart ? (
+              <button className="btn btn-primary m-1" disabled>
+                Added to Cart
+              </button>
+            ) : (
+              <button className="btn btn-primary m-1" onClick={() => addProduct(product)}>
+                Add to Cart
+              </button>
+            )}
                 </div>
 
               </div>

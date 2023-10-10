@@ -42,7 +42,7 @@ const Checkout = () => {
           <div className="row my-4">
             <div className="col-md-5 col-lg-4 order-md-last">
               <div className="card mb-4">
-                <div className="card-header py-3 bg-light">
+                <div className="card-header py-3 bg-secondary-subtle">
                   <h5 className="mb-0">Order Summary</h5>
                 </div>
                 <div className="card-body">
@@ -68,7 +68,7 @@ const Checkout = () => {
             </div>
             <div className="col-md-7 col-lg-8">
               <div className="card mb-4">
-                <div className="card-header py-3">
+                <div className="card-header py-3 bg-secondary-subtle">
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
@@ -273,7 +273,7 @@ const Checkout = () => {
                     <hr className="my-4" />
 
                     <button
-                      className="w-100 btn btn-primary "
+                      className="w-100 btn btn-primary"
                       type="submit" disabled
                     >
                       Continue to checkout

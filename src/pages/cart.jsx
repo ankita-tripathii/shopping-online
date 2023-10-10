@@ -44,12 +44,12 @@ const EmptyCart = () => {
   	let subtotal = 0;
     let shipping = 30.0;
     let totalItems = 0;
-    state.map((item) => {
-      return (subtotal += item.price * item.qty);
+    state.map((product) => {
+      return (subtotal += product.price * product.qty);
     });
 
-    state.map((item) => {
-      return (totalItems += item.qty);
+    state.map((product) => {
+      return (totalItems += product.qty);
     });
     return (
       <>
@@ -62,28 +62,31 @@ const EmptyCart = () => {
                     <h5 className="mb-0">Item List</h5>
                   </div>
                   <div className="card-body ">
-                    {state.map((item) => {
+                    {state.map((product) => {
                       return (
-                        <div key={item.id}>
+                        <div key={product.id}>
                           <div className="row d-flex align-items-center">
                             <div className="col-lg-3 col-md-12">
                               <div
                                 className="bg-image rounded"
                                 data-mdb-ripple-color="light"
                               >
-                                <img
-                                  src={item.image}
+                              <Link to={"/product/" + product.id} type="button">
+                              <img
+                                  src={product.image}
                                   // className="w-100"
-                                  alt={item.title}
+                                  alt={product.title}
                                   width={100}
                                   height={75}
                                 />
+                               </Link>
+                                
                               </div>
                             </div>
 
                             <div className="col-lg-5 col-md-6">
                               <p>
-                                <strong>{item.title}</strong>
+                                <strong>{product.title}</strong>
                               </p>
                               {/* <p>Color: blue</p>
                               <p>Size: M</p> */}
@@ -97,18 +100,18 @@ const EmptyCart = () => {
                                 <button
                                   className="btn px-3"
                                   onClick={() => {
-                                    removeItem(item);
+                                    removeItem(product);
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faMinus} />
                                 </button>
 
-                                <p className="mx-5">{item.qty}</p>
+                                <p className="mx-5">{product.qty}</p>
 
                                 <button
                                   className="btn px-3"
                                   onClick={() => {
-                                    addItem(item);
+                                    addItem(product);
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faPlus} />
@@ -117,8 +120,8 @@ const EmptyCart = () => {
 
                               <p className="text-start text-md-center">
                                 <strong>
-                                  <span className="text-muted">{item.qty}</span>{" "}
-                                  x ${item.price}
+                                  <span className="text-muted">{product.qty}</span>{" "}
+                                  x ${product.price}
                                 </strong>
                               </p>
                             </div>
@@ -157,9 +160,7 @@ const EmptyCart = () => {
 
                     <Link
                       to="/checkout"
-                      className="btn btn-primary btn-lg btn-block"
-                    >
-                      Go to checkout
+                      className="btn btn-primary btn-lg btn-block">Go to checkout
                     </Link>
                   </div>
                 </div>

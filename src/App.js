@@ -6,6 +6,7 @@ import Register from "./pages/register";
 import AboutPage from "./pages/about";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
+import ProductDetail from "./pages/product_detail";
 
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
             </Routes>
             </Provider>
        </>
