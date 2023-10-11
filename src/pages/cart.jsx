@@ -92,10 +92,10 @@ const EmptyCart = () => {
                               <p>Size: M</p> */}
                             </div>
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-4 col-md-6 ">
                               <div
-                                className="d-flex mb-4"
-                                style={{ maxWidth: "300px" }}
+                                className="d-flex mb-4 bg-warning rounded-pill"
+                                style={{ maxWidth: "200px" }}
                               >
                                 <button
                                   className="btn px-3"
@@ -103,7 +103,7 @@ const EmptyCart = () => {
                                     removeItem(product);
                                   }}
                                 >
-                                  <FontAwesomeIcon icon={faMinus} />
+                                  <FontAwesomeIcon icon={faMinus} style={{color: "#ffffff",}} />
                                 </button>
 
                                 <p className="mx-5">{product.qty}</p>
@@ -114,7 +114,7 @@ const EmptyCart = () => {
                                     addItem(product);
                                   }}
                                 >
-                                  <FontAwesomeIcon icon={faPlus} />
+                                  <FontAwesomeIcon icon={faPlus} style={{color: "#ffffff",}} />
                                 </button>
                               </div>
 
