@@ -54,7 +54,7 @@ const AboutPage = () => {
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100 bg-warning-subtle">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+               <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
                 <Link to="/products" className="card-title text-center btn btn-primary" style={{color: "white"}}>Electronics</Link>
               </div>
