@@ -1,4 +1,5 @@
 import React from "react";
+import bannerHero from "../assets/women_smile.jpg";
 
 const Banner = () => {
   return (
@@ -8,7 +9,7 @@ const Banner = () => {
         <div className="card bg-dark text-white border-0 mx-3">
           <img
             className="card-img"
-            src="women_smile.jpg"
+            src={bannerHero}
             alt="Card"
             height={600}
           />
