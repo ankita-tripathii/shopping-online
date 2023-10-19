@@ -72,7 +72,7 @@
                     className="card-img-top p-3"
                     src={product.image}
                     alt="Card"
-                    height={250}
+                    height={300}
 
                   />
 
