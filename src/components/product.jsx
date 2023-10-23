@@ -66,7 +66,7 @@
         return (
 
           <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
-                <div className="card text-center h-100" key={product.id}>
+                <div className="card text-center" key={product.id}>
 
                   <img
                     className="card-img-top p-3"
@@ -76,7 +76,7 @@
 
                   />
 
-                    <div className="col-lg-6 col-md-6 ">
+                    <div className="col-lg-4 col-md-4 ">
                                 <div
                                   className="mb-2 bg-warning rounded-pill"
                                   style={{ maxWidth: "100px" }}
