@@ -27,7 +27,7 @@
 
     async function fetchProductData() {
       try {
-        const response = await fetch("http://localhost:8000/api/getAlluser_product");
+        const response = await fetch("https://fakestoreapi.com/products");
         const json = await response.json();
         setProductList(json);
         setFilteredProducts(json);
@@ -104,10 +104,10 @@
 
                   <div className="card-body bg-warning-subtle">
                     <h3 className="card-title">
-                      {product.product_name.substring(0, 12)}...
+                      {product.title.substring(0, 12)}...
                     </h3>
                     <p className="card-text">
-                      {product.product_description.substring(0, 90)}...
+                      {product.description.substring(0, 90)}...
                     </p>
                     <h5> Price: $ {product.price}</h5>
                     <Link to={"/product/" + product.id} className="btn btn-primary m-1">
